@@ -1,12 +1,14 @@
-const { Router } = require('express');
+const { Router } = require("express");
 
-const userController = require('../controller/userController');
-const { authLogin } = require('../middleware/authLogin');
-const { authorUser } = require('../middleware/authorUser');
-const { authSignup } = require('../middleware/authSignup');
+const userController = require("../controller/userController");
 
 const userRouter = new Router();
 
+userRouter.get("/", userController.getInfo);
+userRouter.get("/cart", userController.getCart);
+userRouter.post("/cart", userController.postCart);
 
+userRouter.get("/order", userController.getOrder);
+userRouter.post("/order", userController.postOrder);
 
 module.exports = userRouter;

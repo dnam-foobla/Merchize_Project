@@ -7,6 +7,7 @@ const userSchema = new Schema({
     name: String,
     user: String,
     password: String,
+    isAdmin: Boolean,
     products: [ObjectId]
 })
 
